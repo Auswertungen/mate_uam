@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Algebra - UNAM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .contenedor-examen {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #004d99; /* Azul UNAM */
+            text-align: center;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .pregunta-card {
+            background-color: #e6f0ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        .pregunta-card h2 {
+            margin-top: 0;
+            color: #003366;
+            font-size: 1.2em;
+        }
+        .opciones-lista {
+            list-style-type: none;
+            padding: 0;
+        }
+        .opciones-lista li {
+            margin-bottom: 10px;
+        }
+        .opciones-lista label {
+            display: block;
+            background: #f0f6ff;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .opciones-lista label:hover {
+            background: #e0ecff;
+        }
+        .opciones-lista input[type="radio"] {
+            margin-right: 10px;
+        }
+        #btn-enviar {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #004d99;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        #btn-enviar:hover {
+            background-color: #003366;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .resultado.aprobado {
+            background-color: #e6f9e6;
+            border: 1px solid #c3e6c3;
+            color: #155724;
+        }
+        .resultado.reprobado {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .retroalimentacion {
+            font-style: italic;
+            color: #555;
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #004d99;
+            margin-top: 10px;
+        }
+    </style>
+<p id="calif">
+ <form id="form">
+  
+   <input type="submit" id="button" value="Enviar calif" style="display:none" margin-top="10px">
+</form>
+ 
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('Cy8iAOupXqYE7Xv_T')
+</script>
+
+</head>
+<body>
+    <div id="contenido-principal" style="display: none;">
+        <h1>Bienvenido, <span id="nombre-usuario"></span>!</h1>
+        <p>Ya has accedido a esta página.</p>
+        <button onclick="resetearAcceso()">Cerrar Sesión y Resetear</button>
+    </div>
+    
+     <div class="contenedor-examen">
+        <h1>Examen de Algebra</h1>
+        <p>¡Responde las 15 preguntas tipo admisión UNAM!</p>
+        <div id="examen-container"></div>
+        <button id="btn-enviar">Enviar Respuestas</button>
+        <div id="resultado-container"></div>
+    </div>
+
+    <script src="preguntas.js"></script>
+    <script src="script.js"></script>
+    <h1>Recuerda que al termino del examen y enviar las repuesta, regresar al principio de la pagina y oprimir el boton que aparecera en la parte superior izquierda "enviar calif"</h1>
+
+</body>
+</html>
